@@ -13,8 +13,7 @@ class Header: UICollectionReusableView {
         super.init(frame: frame)
         label.text = "Recommended for you"
         addSubview(label)
-        
-        
+
     }
     
     override func layoutSubviews() {

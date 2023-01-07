@@ -10,40 +10,30 @@ import UIKit
 class MyCustomCollectionViewCell1: UICollectionViewCell {
     
     
-    let section1Manager = Section1Manager()
+  
     
     static let identifier = "customCollectionViewCell1 "
     
     let imageView = UIImageView()
     let label1 = UILabel()
-    
     let label2 = UILabel()
     
-    
-    
-    
     override init(frame: CGRect) {
-        super.init(frame: frame)
         
-            contentView.backgroundColor = .red
+        super.init(frame: frame)
+        contentView.backgroundColor = .red
         contentView.addSubview(label1)
         contentView.addSubview(label2)
         contentView.addSubview(imageView)
         contentView.clipsToBounds = true
         
-        
     }
-    
-    
-    
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-
     
     override func layoutSubviews() {
 
