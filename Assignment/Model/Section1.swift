@@ -12,7 +12,7 @@ struct Section1
     let title : String
     let thumbinal : UIImage?
     let genre : String
-    
+
     
     init(title : String , thumbinal:UIImage? = nil, genre: String)
     {

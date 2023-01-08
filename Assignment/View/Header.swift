@@ -8,18 +8,20 @@
 import UIKit
 
 class Header: UICollectionReusableView {
-    let label = UILabel()
+    let headerLabel = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        label.text = "Recommended for you"
-        addSubview(label)
+       
+        addSubview(headerLabel)
 
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        label.font = label.font.withSize(24)
-        label.frame = bounds
+        headerLabel.text = "Recommended for you"
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        headerLabel.textColor = .white
+        headerLabel.frame = bounds
     }
     
     required init?(coder: NSCoder) {

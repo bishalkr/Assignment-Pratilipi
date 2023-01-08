@@ -20,34 +20,25 @@ class ViewController: UIViewController {
         
     }
     
-    
+
     func setupCollectionView()
     {
-        let searchCollectionView = UICollectionView(frame: .zero, collectionViewLayout: getCompositionalLayout())
-        searchCollectionView.frame = self.view.frame
-        searchCollectionView.delegate = self
-        searchCollectionView.dataSource = self
-        searchCollectionView.register(MyCustomCollectionViewCell2.self, forCellWithReuseIdentifier: MyCustomCollectionViewCell2.identifier)
-        searchCollectionView.register(MyCustomCollectionViewCell1.self, forCellWithReuseIdentifier: MyCustomCollectionViewCell1.identifier)
-        searchCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
-        searchCollectionView.register(Header.self, forSupplementaryViewOfKind: "categoryHeaderID", withReuseIdentifier: "headerID")
-        self.view.addSubview(searchCollectionView)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewModel.getLayout())
+        collectionView.frame = self.view.frame
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0)
+        collectionView.register(MyCustomCollectionViewCell2.self, forCellWithReuseIdentifier: MyCustomCollectionViewCell2.identifier)
+        collectionView.register(MyCustomCollectionViewCell1.self, forCellWithReuseIdentifier: MyCustomCollectionViewCell1.identifier)
+        collectionView.register(Header.self, forSupplementaryViewOfKind: "categoryHeaderID", withReuseIdentifier: "headerID")
+        self.view.addSubview(collectionView)
     }
-    
-    
-    
-    
-    
-    func getCompositionalLayout() -> UICollectionViewCompositionalLayout
-    
-    {
-        
-        return viewModel.getLayout()
-        
-    }
-    
-    
+
 }
+
+
+
+//MARK: - DELEGATE AND DATASOURCE METHODS
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,14 +57,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCollectionViewCell1.identifier, for: indexPath) as! MyCustomCollectionViewCell1
-            cell.label1.text = viewModel.section1Items[indexPath.row].title
-            cell.label2.text = viewModel.section1Items[indexPath.row].genre
+            cell.titleLabel.text = viewModel.section1Items[indexPath.row].title
+            cell.genreLabel.text = viewModel.section1Items[indexPath.row].genre
             cell.imageView.image = viewModel.section1Items[indexPath.row].thumbinal
             
             return cell
@@ -82,12 +73,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         else
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCollectionViewCell2.identifier, for: indexPath) as! MyCustomCollectionViewCell2
-            cell.label1.text = viewModel.section2Items[indexPath.row].title
-            cell.label2.text = viewModel.section2Items[indexPath.row].genre
-            cell.label3.text = viewModel.section2Items[indexPath.row].episode
+            cell.titleLabel.text = viewModel.section2Items[indexPath.row].title
+            cell.genreLabel.text = viewModel.section2Items[indexPath.row].genre
+            cell.episodeLabel.text = viewModel.section2Items[indexPath.row].episode
             cell.imageView.image = viewModel.section2Items[indexPath.row].thumbinal
             
-            cell.backgroundColor = .red
+            
             return cell
         }
         
@@ -97,6 +88,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerID", for: indexPath)
+        
         return header
     }
     

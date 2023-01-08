@@ -113,11 +113,11 @@
 		B7839E8A2966A2F900412ADB /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				B70808D62969680500955A98 /* ViewModel */,
-				B70808D52968E6E200955A98 /* View */,
 				B7839E992966A2FC00412ADB /* Info.plist */,
 				B760B6372968D6660030F45D /* Delegates */,
 				B7856D4F2968A78C00A6F32C /* Model */,
+				B70808D52968E6E200955A98 /* View */,
+				B70808D62969680500955A98 /* ViewModel */,
 				B760B6382968D67E0030F45D /* Controller */,
 				B760B63A2968D6C60030F45D /* Resources */,
 			);
@@ -367,6 +367,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +396,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
